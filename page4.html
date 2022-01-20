@@ -27,19 +27,37 @@
             <p>My Fourth Paragraph</p>
 
             <ul id="album">
-                <li id="photo"><img src="images/winterland1.jpg" alt="Winter land photo 1" width="640"> </li>
+               <!-- <li id="photo"><img src="images/winterland1.jpg" alt="Winter land photo 1" width="640"> </li>
                 <li id="photo"><img src="images/winterland2.jpg" alt="Winter land photo 1" width="640"> </li>
                 <li id="photo"><img src="images/winterland3.jpg" alt="Winter land photo 1" width="640"> </li>
                 <li id="photo"><img src="images/winterland4.jpg" alt="Winter land photo 1" width="640"> </li>
                 <li id="photo"><img src="images/winterland5.jpg" alt="Winter land photo 1" width="640"> </li>
-                <li id="photo"><img src="images/winterland6.jpg" alt="Winter land photo 1" width="640"> </li>
+                <li id="photo"><img src="images/winterland6.jpg" alt="Winter land photo 1" width="640"> </li>-->
             </ul>
         </main>
 
         <footer>&copy; Copyright 2022</footer>
     </div>
 
+<script>
+    var photos = []; //empty array
+    var fileNames = [];
+    var imageList = [];
+    var image;
+    var openList = "<li id='photo'>";
+    var closeList = "</li>";
 
+    //create a loop to create 6 images starting with index of 0
+    for (var i=0; i<6; i++) {
+        fileNames.push("winterland"+(i+1));
+        photos.push("<img src='images/"+fileNames[i]+".jpg' alt='Winter land Photo "+(i+1)+"' width='640'>");
+        image = openList + photos[i] + closeList;
+        imageList.push(image);
+    }
+
+    //display all six images from array
+    document.getElementById('album').innerHTML = imageList.join();
+</script>
 
 
 </body>
